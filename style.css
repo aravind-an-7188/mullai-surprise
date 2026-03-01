@@ -1,5 +1,11 @@
-*{margin:0;padding:0;box-sizing:border-box;}
+/* RESET */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 
+/* BODY */
 body{
 font-family:'Poppins',sans-serif;
 background:url('background.jpg') no-repeat center center fixed;
@@ -11,6 +17,7 @@ text-align:center;
 overflow-x:hidden;
 }
 
+/* LOCK SCREEN */
 .lock{
 position:fixed;
 width:100%;
@@ -29,15 +36,16 @@ font-size:35px;
 color:#ffb6c1;
 }
 
-input{
+.lock input{
 padding:12px 20px;
 border-radius:30px;
 border:none;
 margin-top:20px;
 font-size:16px;
+outline:none;
 }
 
-button{
+.lock button{
 padding:12px 25px;
 border-radius:30px;
 border:none;
@@ -49,11 +57,30 @@ font-size:16px;
 transition:0.3s;
 }
 
-button:hover{
+.lock button:hover{
 background:#ff758f;
 transform:scale(1.05);
 }
 
+/* MUSIC BUTTON */
+.musicBtn{
+padding:12px 25px;
+border-radius:30px;
+border:none;
+background:#ff4d6d;
+color:white;
+cursor:pointer;
+margin-top:20px;
+font-size:16px;
+transition:0.3s;
+}
+
+.musicBtn:hover{
+background:#ff758f;
+transform:scale(1.05);
+}
+
+/* MAIN TITLE */
 h1{
 font-family:'Dancing Script',cursive;
 font-size:55px;
@@ -61,8 +88,9 @@ color:#ffb6c1;
 margin-top:60px;
 }
 
+/* SECTIONS */
 section{
-padding:100px 20px;
+padding:80px 20px;
 opacity:0;
 transform:translateY(40px);
 transition:1s ease;
@@ -73,13 +101,20 @@ opacity:1;
 transform:translateY(0);
 }
 
+section h2{
+margin-bottom:15px;
+color:#ffd6e0;
+}
+
+/* IMAGES */
 img{
-max-width:320px;
+max-width:90%;
 border-radius:20px;
-margin-top:30px;
+margin-top:25px;
 box-shadow:0 0 25px rgba(255,255,255,0.6);
 }
 
+/* TEXT BLOCK */
 .subtext{
 max-width:700px;
 margin:20px auto;
@@ -87,12 +122,15 @@ line-height:1.8;
 font-size:18px;
 }
 
+/* COUNTDOWN */
 .countdown{
-font-size:30px;
+font-size:24px;
 color:#00ffcc;
-margin-top:25px;
+margin-top:20px;
+font-weight:500;
 }
 
+/* TYPING EFFECT */
 .typing{
 border-right:3px solid white;
 white-space:nowrap;
@@ -100,10 +138,11 @@ overflow:hidden;
 display:inline-block;
 }
 
+/* LOVE QUOTE */
 .loveQuote{
 display:block;
 margin-top:30px;
-font-size:26px;
+font-size:22px;
 color:#ffb6c1;
 animation:glow 2s infinite alternate;
 }
@@ -113,10 +152,12 @@ from{ text-shadow:0 0 5px #ff4d6d; }
 to{ text-shadow:0 0 25px #ff4d6d; }
 }
 
+/* FLOATING HEARTS */
 .heart{
 position:fixed;
 color:#ff4d6d;
 animation:float 8s linear infinite;
+pointer-events:none;
 }
 
 @keyframes float{
@@ -124,6 +165,7 @@ animation:float 8s linear infinite;
 100%{transform:translateY(-10vh);opacity:0;}
 }
 
+/* STAR BACKGROUND */
 .stars{
 position:fixed;
 width:100%;
@@ -142,4 +184,25 @@ animation:blink 2s infinite alternate;
 @keyframes blink{
 from{opacity:0.2;}
 to{opacity:1;}
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width:768px){
+
+h1{
+font-size:40px;
+}
+
+.subtext{
+font-size:16px;
+padding:0 15px;
+}
+
+.countdown{
+font-size:20px;
+}
+
+.loveQuote{
+font-size:18px;
+}
 }
