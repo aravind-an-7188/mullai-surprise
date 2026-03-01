@@ -21,6 +21,7 @@ text-align:center;
 overflow-x:hidden;
 }
 
+/* LOCK SCREEN */
 .lock{
 position:fixed;
 width:100%;
@@ -31,6 +32,12 @@ flex-direction:column;
 justify-content:center;
 align-items:center;
 z-index:999;
+}
+
+.lock h2{
+font-family:'Dancing Script',cursive;
+font-size:35px;
+color:#ffb6c1;
 }
 
 input{
@@ -50,6 +57,12 @@ color:white;
 cursor:pointer;
 margin-top:15px;
 font-size:16px;
+transition:0.3s;
+}
+
+button:hover{
+background:#ff758f;
+transform:scale(1.05);
 }
 
 h1{
@@ -91,6 +104,14 @@ overflow:hidden;
 display:inline-block;
 }
 
+.subtext{
+max-width:700px;
+margin:20px auto;
+line-height:1.8;
+font-size:18px;
+}
+
+/* Floating Hearts */
 .heart{
 position:fixed;
 color:#ff4d6d;
@@ -102,17 +123,47 @@ animation:float 8s linear infinite;
 100%{transform:translateY(-10vh);opacity:0;}
 }
 
-.subtext{
-max-width:700px;
-margin:20px auto;
-line-height:1.8;
-font-size:18px;
+/* Stars */
+.stars{
+position:fixed;
+width:100%;
+height:100%;
+z-index:-1;
 }
+
+.stars span{
+position:absolute;
+width:2px;
+height:2px;
+background:white;
+animation:blink 2s infinite alternate;
+}
+
+@keyframes blink{
+from{opacity:0.2;}
+to{opacity:1;}
+}
+
 </style>
 </head>
 
 <body>
 
+<!-- Stars Background -->
+<div class="stars" id="stars"></div>
+
+<!-- Hidden YouTube Player -->
+<div style="display:none;">
+<iframe id="youtubeAudio"
+width="0"
+height="0"
+src=""
+frameborder="0"
+allow="autoplay">
+</iframe>
+</div>
+
+<!-- LOCK -->
 <div class="lock" id="lock">
 <h2>Enter Our Secret ❤️</h2>
 <input type="password" id="pass" placeholder="Password">
@@ -134,24 +185,9 @@ font-size:18px;
 </section>
 
 <section>
-<h2>My Promise</h2>
-<div class="subtext">
-We will live together for next 50 years…<br>
-Even if we fight everyday 😌<br><br>
-Don't worry darling…<br>
-I’ll be with you forever<br>
-Till my last breath.
-</div>
-</section>
-
-<section>
 <h2>Our Little Miracle 👶</h2>
 <img src="baby.jpg">
 <div class="countdown" id="countdown"></div>
-<div class="subtext">
-Every tiny heartbeat inside you  
-is the most beautiful sound in my life.
-</div>
 </section>
 
 <section>
@@ -162,10 +198,6 @@ is the most beautiful sound in my life.
 <section>
 <h2>Mehendi Day 🌿✨</h2>
 <img src="mehendi.jpg">
-<div class="subtext">
-The day your hands were filled with mehendi,  
-your smile was glowing brighter than everything.
-</div>
 </section>
 
 <section>
@@ -181,27 +213,34 @@ your smile was glowing brighter than everything.
 <section>
 <h2>Final Message</h2>
 <div class="subtext">
-Soon someone will look at you…<br>
-Smile at you…<br>
-And call you…<br>
-<strong>Amma.</strong><br><br>
-That will be the most beautiful moment of our life.
+We will live together for next 50 years…<br>
+Even if we fight everyday 😌<br><br>
+Don't worry darling…<br>
+I’ll be with you forever till my last breath.<br><br>
+Soon someone will call you… <strong>Amma.</strong>
 </div>
 </section>
 
 <script>
 
+/* PASSWORD + START MUSIC */
 function unlock(){
 if(document.getElementById("pass").value==="MullaiRvForever"){
 document.getElementById("lock").style.display="none";
-hearts();
+
+/* Load YouTube at 1:56 (116 sec) */
+document.getElementById("youtubeAudio").src =
+"https://www.youtube.com/embed/nMUmySghIL0?start=116&autoplay=1&loop=1&playlist=nMUmySghIL0";
+
+launchHearts();
 }else{
 alert("Wrong Password ❤️");
 }
 }
 
-function hearts(){
-for(let i=0;i<25;i++){
+/* Hearts */
+function launchHearts(){
+for(let i=0;i<30;i++){
 let heart=document.createElement("div");
 heart.innerHTML="❤️";
 heart.className="heart";
@@ -212,6 +251,7 @@ document.body.appendChild(heart);
 }
 }
 
+/* Typing */
 let text="From Two Hearts… To Three Souls 👶";
 let i=0;
 function type(){
@@ -223,6 +263,7 @@ setTimeout(type,80);
 }
 type();
 
+/* Scroll Animation */
 window.addEventListener("scroll",()=>{
 document.querySelectorAll("section").forEach(sec=>{
 if(sec.getBoundingClientRect().top<window.innerHeight-100){
@@ -231,6 +272,7 @@ sec.classList.add("show");
 });
 });
 
+/* Countdown */
 let due=new Date("April 27, 2026 00:00:00").getTime();
 setInterval(()=>{
 let now=new Date().getTime();
@@ -244,6 +286,15 @@ document.getElementById("countdown").innerHTML=
 "Our Baby Has Arrived 👶🎉";
 }
 },1000);
+
+/* Stars */
+let stars=document.getElementById("stars");
+for(let i=0;i<150;i++){
+let star=document.createElement("span");
+star.style.left=Math.random()*100+"%";
+star.style.top=Math.random()*100+"%";
+stars.appendChild(star);
+}
 
 </script>
 
