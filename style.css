@@ -1,11 +1,15 @@
-/* RESET */
+/* =========================
+   RESET
+========================= */
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
 }
 
-/* BODY */
+/* =========================
+   BODY
+========================= */
 body{
 font-family:'Poppins',sans-serif;
 background:url('background.jpg') no-repeat center center fixed;
@@ -15,9 +19,12 @@ background-blend-mode:overlay;
 color:white;
 text-align:center;
 overflow-x:hidden;
+min-height:100vh;
 }
 
-/* LOCK SCREEN */
+/* =========================
+   LOCK SCREEN
+========================= */
 .lock{
 position:fixed;
 width:100%;
@@ -28,21 +35,24 @@ flex-direction:column;
 justify-content:center;
 align-items:center;
 z-index:999;
+padding:20px;
 }
 
 .lock h2{
 font-family:'Dancing Script',cursive;
-font-size:35px;
+font-size:36px;
 color:#ffb6c1;
+margin-bottom:20px;
 }
 
 .lock input{
 padding:12px 20px;
 border-radius:30px;
 border:none;
-margin-top:20px;
 font-size:16px;
 outline:none;
+width:250px;
+max-width:90%;
 }
 
 .lock button{
@@ -62,7 +72,9 @@ background:#ff758f;
 transform:scale(1.05);
 }
 
-/* MUSIC BUTTON */
+/* =========================
+   MUSIC BUTTON
+========================= */
 .musicBtn{
 padding:12px 25px;
 border-radius:30px;
@@ -70,9 +82,10 @@ border:none;
 background:#ff4d6d;
 color:white;
 cursor:pointer;
-margin-top:20px;
+margin:20px auto;
 font-size:16px;
 transition:0.3s;
+display:inline-block;
 }
 
 .musicBtn:hover{
@@ -80,7 +93,9 @@ background:#ff758f;
 transform:scale(1.05);
 }
 
-/* MAIN TITLE */
+/* =========================
+   TITLE
+========================= */
 h1{
 font-family:'Dancing Script',cursive;
 font-size:55px;
@@ -88,7 +103,14 @@ color:#ffb6c1;
 margin-top:60px;
 }
 
-/* SECTIONS */
+section h2{
+margin-bottom:15px;
+color:#ffd6e0;
+}
+
+/* =========================
+   SECTIONS
+========================= */
 section{
 padding:80px 20px;
 opacity:0;
@@ -101,12 +123,9 @@ opacity:1;
 transform:translateY(0);
 }
 
-section h2{
-margin-bottom:15px;
-color:#ffd6e0;
-}
-
-/* IMAGES */
+/* =========================
+   IMAGES
+========================= */
 img{
 max-width:90%;
 border-radius:20px;
@@ -114,15 +133,20 @@ margin-top:25px;
 box-shadow:0 0 25px rgba(255,255,255,0.6);
 }
 
-/* TEXT BLOCK */
+/* =========================
+   TEXT BLOCK
+========================= */
 .subtext{
 max-width:700px;
 margin:20px auto;
 line-height:1.8;
 font-size:18px;
+padding:0 10px;
 }
 
-/* COUNTDOWN */
+/* =========================
+   COUNTDOWN
+========================= */
 .countdown{
 font-size:24px;
 color:#00ffcc;
@@ -130,7 +154,9 @@ margin-top:20px;
 font-weight:500;
 }
 
-/* TYPING EFFECT */
+/* =========================
+   TYPING EFFECT
+========================= */
 .typing{
 border-right:3px solid white;
 white-space:nowrap;
@@ -138,7 +164,9 @@ overflow:hidden;
 display:inline-block;
 }
 
-/* LOVE QUOTE */
+/* =========================
+   LOVE QUOTE GLOW
+========================= */
 .loveQuote{
 display:block;
 margin-top:30px;
@@ -152,7 +180,9 @@ from{ text-shadow:0 0 5px #ff4d6d; }
 to{ text-shadow:0 0 25px #ff4d6d; }
 }
 
-/* FLOATING HEARTS */
+/* =========================
+   FLOATING HEARTS
+========================= */
 .heart{
 position:fixed;
 color:#ff4d6d;
@@ -161,11 +191,19 @@ pointer-events:none;
 }
 
 @keyframes float{
-0%{transform:translateY(100vh);opacity:1;}
-100%{transform:translateY(-10vh);opacity:0;}
+0%{
+transform:translateY(100vh);
+opacity:1;
+}
+100%{
+transform:translateY(-10vh);
+opacity:0;
+}
 }
 
-/* STAR BACKGROUND */
+/* =========================
+   STAR BACKGROUND
+========================= */
 .stars{
 position:fixed;
 width:100%;
@@ -186,7 +224,9 @@ from{opacity:0.2;}
 to{opacity:1;}
 }
 
-/* MOBILE RESPONSIVE */
+/* =========================
+   RESPONSIVE MOBILE
+========================= */
 @media (max-width:768px){
 
 h1{
@@ -195,7 +235,6 @@ font-size:40px;
 
 .subtext{
 font-size:16px;
-padding:0 15px;
 }
 
 .countdown{
@@ -205,4 +244,9 @@ font-size:20px;
 .loveQuote{
 font-size:18px;
 }
+
+.lock h2{
+font-size:28px;
+}
+
 }
