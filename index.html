@@ -8,12 +8,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
 
 <style>
+*{margin:0;padding:0;box-sizing:border-box;}
+
 body{
-margin:0;
 font-family:'Poppins',sans-serif;
 background:url('background.jpg') no-repeat center center fixed;
 background-size:cover;
-background-color:rgba(0,0,0,0.6);
+background-color:rgba(0,0,0,0.7);
 background-blend-mode:overlay;
 color:white;
 text-align:center;
@@ -33,30 +34,33 @@ z-index:999;
 }
 
 input{
-padding:12px;
-border-radius:25px;
+padding:12px 20px;
+border-radius:30px;
 border:none;
-margin-top:15px;
+margin-top:20px;
+font-size:16px;
 }
 
 button{
 padding:12px 25px;
-border-radius:25px;
+border-radius:30px;
 border:none;
 background:#ff4d6d;
 color:white;
 cursor:pointer;
-margin-top:10px;
+margin-top:15px;
+font-size:16px;
 }
 
 h1{
 font-family:'Dancing Script',cursive;
-font-size:50px;
+font-size:55px;
 color:#ffb6c1;
+margin-top:60px;
 }
 
 section{
-padding:80px 20px;
+padding:100px 20px;
 opacity:0;
 transform:translateY(40px);
 transition:1s ease;
@@ -68,16 +72,16 @@ transform:translateY(0);
 }
 
 img{
-max-width:300px;
+max-width:320px;
 border-radius:20px;
-margin-top:20px;
-box-shadow:0 0 20px rgba(255,255,255,0.6);
+margin-top:30px;
+box-shadow:0 0 25px rgba(255,255,255,0.6);
 }
 
 .countdown{
-font-size:28px;
+font-size:30px;
 color:#00ffcc;
-margin-top:20px;
+margin-top:25px;
 }
 
 .typing{
@@ -90,7 +94,7 @@ display:inline-block;
 .heart{
 position:fixed;
 color:#ff4d6d;
-animation:float 6s linear infinite;
+animation:float 8s linear infinite;
 }
 
 @keyframes float{
@@ -114,7 +118,7 @@ animation:float 6s linear infinite;
 </section>
 
 <section>
-<h2>Our Timeline</h2>
+<h2>Our Beautiful Journey</h2>
 <p>
 💑 First Meet – 03/09/2023<br>
 💍 Marriage – 11/02/2024<br>
@@ -128,39 +132,31 @@ animation:float 6s linear infinite;
 We will live together for next 50 years…<br>
 Even if we fight everyday 😌<br><br>
 Don't worry darling…<br>
-I'll be with you forever<br>
+I’ll be with you forever<br>
 Till my last breath.
 </p>
 </section>
 
 <section>
 <h2>Our Little Miracle 👶</h2>
-<img src="baby.jpg">
 <div class="countdown" id="countdown"></div>
 </section>
 
 <section>
-<h2>Amma-to-Be ❤️</h2>
+<h2>My Beautiful Amma ❤️</h2>
 <img src="mullai.png">
-<p>You are already the most beautiful mother.</p>
 </section>
 
 <section>
-<h2>Mehendi Day 🌿</h2>
-<img src="mehendi.jpg">
-<p>The most beautiful bride glowing in happiness.</p>
+<h2>Future Cat 🐱</h2>
+<img src="cat.jpg">
+<p>Maybe one cute little kitten at home 😍</p>
 </section>
 
 <section>
-<h2>Makeup Artist Magic 💄</h2>
-<img src="makeup.jpg">
-<p>Your smile shines brighter than any makeup.</p>
-</section>
-
-<section>
-<h2>Our Future Home 🐱🐶</h2>
-<img src="catdog.jpg">
-<p>Maybe one cat… maybe one dog… and our baby running around ❤️</p>
+<h2>Future Dog 🐶</h2>
+<img src="dog.jpg">
+<p>And one loyal puppy running behind our baby ❤️</p>
 </section>
 
 <section>
@@ -169,15 +165,14 @@ Till my last breath.
 Soon someone will look at you…<br>
 Smile at you…<br>
 And call you…<br>
-<strong>Amma.</strong><br><br>
-That will be the most beautiful moment of our life.
+<strong>Amma.</strong>
 </p>
 </section>
 
 <script>
 
 function unlock(){
-if(document.getElementById("pass").value==="MullaiRv"){
+if(document.getElementById("pass").value==="MullaiRvForever"){
 document.getElementById("lock").style.display="none";
 hearts();
 }else{
@@ -191,8 +186,8 @@ let heart=document.createElement("div");
 heart.innerHTML="❤️";
 heart.className="heart";
 heart.style.left=Math.random()*100+"vw";
-heart.style.fontSize=(Math.random()*20+15)+"px";
-heart.style.animationDuration=(Math.random()*3+3)+"s";
+heart.style.fontSize=(Math.random()*25+15)+"px";
+heart.style.animationDuration=(Math.random()*4+4)+"s";
 document.body.appendChild(heart);
 }
 }
